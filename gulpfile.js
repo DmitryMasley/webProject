@@ -9,11 +9,15 @@ var sourcemaps = require("gulp-sourcemaps");
 var exec = require('child_process').exec;
 var webpack = require('webpack-stream');
 var webpackConfig = require("./webpack.config.js");
-console.log(webpackConfig);
+
+
 gulp.task("build", function(){
     "use strict";
     gulp.src("public/src/js/main.js")
         .pipe(webpack(webpackConfig))
+        .on('error', function(error) {
+            this.emit('end'); // prevent watch to stop on build error
+        })
         .pipe(gulp.dest("public/build/js/"));
 });
 gulp.task('watch', function() {
