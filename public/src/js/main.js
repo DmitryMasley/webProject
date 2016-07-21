@@ -7,21 +7,28 @@ import appDispatcher from "./dispatcher/appDispatcher";
 import mainView from "./components/mainView.jsx";
 import React from "react";
 import ReactDOM from "react-dom";
+import todoStore from "./stores/todoStore";
+import counterStore from "./stores/counterStore";
+import Counter from "./components/counter";
 
-var dispatcher = new appDispatcher();
-document.write(util.getMessage());
-dispatcher.register(function(data){
-    new Promise(function(resolve, reject){
-
-    });
+const render = ()=>{
     ReactDOM.render(
-        React.createElement(
-            mainView,
-            data
-        ),
-        document.getElementsByTagName('body')[0]
+        React.createElement(Counter,
+            {
+                value:counterStore.getState(),
+                onIncrement:()=>{
+                    counterStore.dispatch({
+                        type: "INCREMENT"
+                    });
+                },
+                onDecrement:()=>{
+                    counterStore.dispatch({
+                        type: "DECREMENT"
+                    });
+                }
+            }),
+        document.getElementById("root")
     );
-});
-dispatcher.dispatch({
-    text: "New Event Executed"
-});
+};
+counterStore.subscribe(render);
+render();

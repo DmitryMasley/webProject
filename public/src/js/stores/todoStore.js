@@ -2,10 +2,9 @@
  * Created by dmasley on 7/19/16.
  */
 import {createStore} from "redux";
+import todoReducer from "../reducers/todoReducer";
 
-const reducer = (state, action)=>{
-    "use strict";
-    return state;
-};
 
-const store = createStore(reducer);
+const store = createStore(todoReducer);
+
+export default store;
