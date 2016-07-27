@@ -18,7 +18,7 @@ module.exports = {
                 loader: 'babel',
                 exclude: /node_modules/,
                 query: {
-                    presets: ['es2015']
+                    presets: ['es2015', "react"]
                 }
 
             },
@@ -39,6 +39,7 @@ module.exports = {
         root: path.join(__dirname, "javascript", "react"),
         modulesDirectories: ["web_modules", "node_modules", "src"]
     },
+    devtool: "eval-source-map",
     plugins: (
         function() {
             var plugins = [];
