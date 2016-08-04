@@ -5,3 +5,6 @@ node_modules/**
 .idea/misc.xml
 .idea/workspace.xml
 .idea/workspace.xml
+public/build/**
+.idea/workspace.xml
+.idea/modules.xml

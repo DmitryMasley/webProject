@@ -10,11 +10,11 @@ class TodoApp extends React.Component {
         return (
             <div>
                 <input ref={(node) => {
-                    this.input = node;
+                    this.todoName = node;
                 }}/>
                 <button onClick={() => {
-                    this.addTodo(this.input.value);
-                    this.input.value = "";
+                    this.addTodo(this.todoName.value);
+                    this.todoName.value = "";
                 }}>Add Todo</button>
                 <ul>
                     {this.props.todos.map(todo =>
