@@ -15,8 +15,7 @@ import React from "react";
 const render = ()=>{
     ReactDOM.render(
         React.createElement(TodoApp,
-            {
-                todos: todoStore.getState().todos,
+            Object.assign({
                 addTodo: (text) => {
                     todoStore.dispatch({
                         type: "ADD_TODO",
@@ -28,8 +27,14 @@ const render = ()=>{
                         type: "TOGGLE_TODO",
                         id: id
                     });
+                },
+                setFilter: (filter) => {
+                    todoStore.dispatch({
+                        type: "SET_VISIBILITY_FILTER",
+                        filter
+                    })
                 }
-            }),
+            }, todoStore.getState())),
         document.getElementById("root")
     );
 };
