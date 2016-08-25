@@ -11,3 +11,4 @@ public/build/**
 .idea/workspace.xml
 
 .idea/workspace.xml
+/public/build/**
