@@ -33,7 +33,8 @@ const render = ()=>{
                         type: "SET_VISIBILITY_FILTER",
                         filter
                     })
-                }
+                },
+                store: todoStore
             }, todoStore.getState())),
         document.getElementById("root")
     );

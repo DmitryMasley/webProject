@@ -1,25 +1,28 @@
 import React from "react";
+import Link from "./link";
 
 'use strict';
 class FilterLink extends React.Component {
+    componentDidMount(){
+        this.unsubscribe = this.props.store.subscribe(()=>{
+            this.forceUpdate();
+        })
+    }
+    componentWillUnmount(){
+        this.unsubscribe();
+    }
     constructor(options){
         super();
         this.setFilter = options.setFilter;
     }
     render(){
-        if(this.props.currentFilter === this.props.filter){
-            return (<div>
-                <span>{this.props.children}</span>
-            </div>)
-        }
-        return (
-            <div>
-            <a href='#' onClick={(e) => {
-                    e.preventDefault();
-                    this.setFilter(this.props.filter);
-                }
-            }>{this.props.children}</a>
-                </div>);
+        const props = this.props;
+        const state = this.props.store.getState();
+
+        return <Link active={props.filter === state.visibilityFilter} onClick={(e) => {
+            e.preventDefault();
+            this.setFilter(props.filter);
+        }}>{this.props.children}</Link>
     }
 }
 
