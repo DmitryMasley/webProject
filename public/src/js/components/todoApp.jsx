@@ -1,27 +1,25 @@
 import React from "react";
 import FilterLink from "./filterLink";
-import TodoList from "./todoList";
+import VisibleTodoList from "./visibleTodoList";
 import AddTodo from "./addTodo";
 import Footer from "./footer";
 
 
 class TodoApp extends React.Component {
-    constructor(options){
-        super();
-        this.addTodo = options.addTodo;
-        this.toggleTodo = options.toggleTodo;
-        this.setFilter = options.setFilter;
-    }
     render(){
-        const {todos, visibilityFilter} = this.props;
-
         return (
             <div>
-                <AddTodo addTodo={this.addTodo} />
-                <TodoList toggleTodo={this.toggleTodo} {...this.props}/>
-                <Footer {...this.props}></Footer>
+                <AddTodo addTodo={this.context.addTodo} />
+                <VisibleTodoList toggleTodo={this.context.toggleTodo} {...this.props}/>
+                <Footer></Footer>
             </div>
         )
     }
 }
+TodoApp.contextTypes = {
+    store: React.PropTypes.object,
+    setFilter: React.PropTypes.func,
+    toggleTodo: React.PropTypes.func,
+    addTodo: React.PropTypes.func
+};
 export default TodoApp;

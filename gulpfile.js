@@ -13,7 +13,7 @@ var webpackConfig = require("./webpack.config.js");
 
 gulp.task("build", function(){
     "use strict";
-    gulp.src("public/src/js/main.js")
+    gulp.src("public/src/js/main.jsx")
         .pipe(webpack(webpackConfig))
         .on('error', function(error) {
             this.emit('end'); // prevent watch to stop on build error

@@ -10,4 +10,8 @@ class Footer extends React.Component {
         </div>
     }
 }
+Footer.contextTypes = {
+    store: React.PropTypes.object,
+    setFilter: React.PropTypes.func
+};
 export default Footer;

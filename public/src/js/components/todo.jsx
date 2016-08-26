@@ -6,7 +6,7 @@ class Todo extends React.Component {
     }
     render(){
         return <li key={this.props.id} onClick={()=>{
-            this.props.toggleTodo(this.props.id);
+            this.context.toggleTodo(this.props.id);
         }} style={{
             textDecoration: this.props.completed === true ? "line-through" : "none"
         }}>
@@ -14,4 +14,7 @@ class Todo extends React.Component {
         </li>
     }
 }
+Todo.contextTypes = {
+    toggleTodo: React.PropTypes.func
+};
 export default Todo;
