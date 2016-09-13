@@ -1,4 +1,6 @@
 import React from "react";
+import actions from "../actions";
+import {connect} from "react-redux";
 
 class AddTodo extends React.Component {
     render(){
@@ -9,10 +11,11 @@ class AddTodo extends React.Component {
             <button onKeyUp={()=>{
 
             }} onClick={() => {
-                this.props.addTodo(this.todoName.value);
+                this.props.dispatch(actions.addTodo(this.todoName.value));
                 this.todoName.value = "";
             }}>Add Todo</button>
         </div>
     }
 }
+AddTodo = connect()(AddTodo);
 export default AddTodo;

@@ -1,4 +1,6 @@
 import React from "react";
+import actions from "../actions";
+import {connect} from "react-redux";
 
 class Todo extends React.Component {
     constructor(options){
@@ -6,7 +8,7 @@ class Todo extends React.Component {
     }
     render(){
         return <li key={this.props.id} onClick={()=>{
-            this.context.toggleTodo(this.props.id);
+            this.props.dispatch(actions.toggleTodo(this.props.id));
         }} style={{
             textDecoration: this.props.completed === true ? "line-through" : "none"
         }}>
@@ -14,7 +16,5 @@ class Todo extends React.Component {
         </li>
     }
 }
-Todo.contextTypes = {
-    toggleTodo: React.PropTypes.func
-};
+Todo = connect()(Todo);
 export default Todo;

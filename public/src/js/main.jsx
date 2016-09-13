@@ -11,31 +11,14 @@ import counterStore from "./stores/counterStore";
 import Counter from "./components/counter";
 import TodoApp from "./components/todoApp";
 import React from "react";
-import Provider from "./components/provider";
+import {Provider} from "react-redux";
 
 const render = ()=>{
 
     ReactDOM.render(
         <Provider
             store={todoStore}
-            addTodo ={ (text) => {
-                todoStore.dispatch({
-                    type: "ADD_TODO",
-                    text: text
-                });
-            }}
-            toggleTodo ={(id) => {
-                    todoStore.dispatch({
-                        type: "TOGGLE_TODO",
-                        id: id
-                    });
-                }}
-            setFilter ={ (filter) => {
-                todoStore.dispatch({
-                    type: "SET_VISIBILITY_FILTER",
-                    filter
-                })
-            }}>
+        >
             <TodoApp/>
         </Provider>,
         document.getElementById("root"));

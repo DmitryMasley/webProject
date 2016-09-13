@@ -9,8 +9,8 @@ class TodoApp extends React.Component {
     render(){
         return (
             <div>
-                <AddTodo addTodo={this.context.addTodo} />
-                <VisibleTodoList toggleTodo={this.context.toggleTodo} {...this.props}/>
+                <AddTodo />
+                <VisibleTodoList {...this.props}/>
                 <Footer></Footer>
             </div>
         )
