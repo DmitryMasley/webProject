@@ -4,14 +4,10 @@ import FilterLink from "./filterLink";
 class Footer extends React.Component {
     render(){
         return<div>
-            <FilterLink filter="SHOW_ALL" {... this.props}>Show ALL</FilterLink>
-            <FilterLink filter="SHOW_COMPLETED"  {... this.props}>Show COMPLETED</FilterLink>
-            <FilterLink filter="SHOW_ACTIVE"  {... this.props}>Show ACTIVE</FilterLink>
+            <FilterLink filter="SHOW_ALL">Show ALL</FilterLink>
+            <FilterLink filter="SHOW_COMPLETED">Show COMPLETED</FilterLink>
+            <FilterLink filter="SHOW_ACTIVE">Show ACTIVE</FilterLink>
         </div>
     }
 }
-Footer.contextTypes = {
-    store: React.PropTypes.object,
-    setFilter: React.PropTypes.func
-};
 export default Footer;

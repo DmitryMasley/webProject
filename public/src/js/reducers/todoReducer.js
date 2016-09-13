@@ -1,5 +1,4 @@
 "use strict";
-import {combineReducers} from "redux";
 
 const todo = (state = {}, action = {}) => {
     switch(action.type) {
@@ -10,7 +9,7 @@ const todo = (state = {}, action = {}) => {
                 return Object.assign({}, state, {
                     completed: !state.completed
                 });
-            };
+            }
         case "ADD_TODO":
             return {
                     id: action.id,
@@ -19,7 +18,7 @@ const todo = (state = {}, action = {}) => {
                 };
         default:
             return state;
-    };
+    }
 };
 
 const todos = (state = [], action = {})=>{
@@ -33,7 +32,7 @@ const todos = (state = [], action = {})=>{
             return state.map(t => todo(t, action));
         default:
             return state;
-    };
+    }
 };
 
 const visibilityFilter = (state = "SHOW_ALL", action = {}) => {
@@ -42,7 +41,7 @@ const visibilityFilter = (state = "SHOW_ALL", action = {}) => {
             return action.filter;
         default:
             return state;
-    };
+    }
 };
 const nextId = (state=0, action={}) => {
     switch(action.type){
