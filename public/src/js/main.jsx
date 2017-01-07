@@ -10,9 +10,7 @@ import {Provider} from "react-redux";
 
 
 ReactDOM.render(
-    <Provider
-        store={todoStore}
-    >
+    <Provider store={todoStore}>
         <TodoApp/>
     </Provider>,
     document.getElementById("root"));
