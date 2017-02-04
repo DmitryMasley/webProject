@@ -6,8 +6,7 @@ class TodoList extends React.Component {
         const {todos} = this.props;
         return  <ul>
             {todos.map(todo =>
-                <Todo key={todo.id} toggleTodo={this.props.onTodoClick}
-                      {...todo} />
+                <Todo key={todo.id} {...todo} />
             )}
         </ul>
     }

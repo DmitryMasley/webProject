@@ -7,7 +7,7 @@ class Todo extends React.Component {
         super();
     }
     render(){
-        return <li key={this.props.id} onClick={()=>{
+        return <li onClick={()=>{
             this.props.dispatch(actions.toggleTodo(this.props.id));
         }} style={{
             textDecoration: this.props.completed === true ? "line-through" : "none"
