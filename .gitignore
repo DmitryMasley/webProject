@@ -12,3 +12,4 @@ public/build/**
 
 .idea/workspace.xml
 /public/build/**
+public/build/js/main.bundle.js

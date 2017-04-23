@@ -14,15 +14,15 @@ var wsRouter = require("./routes/wsRouter");
 app.use(express.static('public'));
 app.set("view engine", "ejs");
 
-var dbConfig = require('./db.js');
-var mongoose = require('mongoose');
-mongoose.connect(dbConfig.url);
+// var dbConfig = require('./db.js');
+// var mongoose = require('mongoose');
+// mongoose.connect(dbConfig.url);
 
 app.use("", mainRouter);
 app.use("", wsRouter);
 
 var server = net.createServer();
-server.listen("127.0.0.1", 6969);
+server.listen(6967);
 server.on("connection", (socket)=>{
     console.log('CONNECTED: ' + sock.remoteAddress +':'+ sock.remotePort);
 
