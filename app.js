@@ -18,7 +18,7 @@ app.set("view engine", "ejs");
 // var mongoose = require('mongoose');
 // mongoose.connect(dbConfig.url);
 
-app.use("", mainRouter);
+app.use("/", mainRouter);
 app.use("", wsRouter);
 
 var server = net.createServer();

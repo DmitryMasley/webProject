@@ -9,27 +9,19 @@ var argv = require("yargs").argv;
 module.exports = {
     entry: "./public/src/js/main",
     output: {
+        path: __dirname + "/public/build/js",
         filename: "main.bundle.js"
     },
     module: {
         loaders: [
             {
-                test: /\.js?$/,
+                test: /\.js|\.jsx$/,
                 loader: 'babel',
                 exclude: /node_modules/,
                 query: {
                     presets: ['es2015', "react"]
                 }
 
-            },
-
-            {
-                test: /\.jsx$/,
-                exclude: [/node_modules/],
-                loader: "babel",
-                query: {
-                    presets: ['es2015', "react"]
-                }
             }
         ]
     },

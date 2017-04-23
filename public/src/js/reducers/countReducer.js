@@ -1,8 +1,9 @@
+"use strict";
 /**
  * Created by dmasley on 7/21/16.
  */
 const counter = (state=0, action)=>{
-    "use strict";
+
     switch(action.type){
         case 'INCREMENT':
             return state+1;
