@@ -1,8 +1,8 @@
 "use strict";
 /* global require*/
-var path = require("path");
-var webpack = require("webpack");
-var argv = require("yargs").argv;
+const path = require("path");
+const webpack = require("webpack");
+const argv = require("yargs").argv;
 /**
  * Created by dmasley on 6/1/16.
  */
@@ -66,7 +66,7 @@ module.exports = {
     devtool: "eval-source-map",
     plugins: (
         function() {
-            var plugins = [
+            let plugins = [
 
             ];
 
