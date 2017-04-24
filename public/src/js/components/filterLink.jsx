@@ -8,7 +8,7 @@ import {connect} from "react-redux";
 let FilterLink = connect(
     (state, ownProps)=>{
         return {
-            active: ownProps.filter === state.visibilityFilter
+            active: ownProps.filter === state.todo.visibilityFilter
         }
     },
     (dispatch, ownProps)=>{

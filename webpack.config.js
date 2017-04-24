@@ -6,6 +6,8 @@ var argv = require("yargs").argv;
 /**
  * Created by dmasley on 6/1/16.
  */
+process.traceDeprecation = true;
+
 module.exports = {
     entry: "./public/src/js/main",
     output: {
@@ -13,28 +15,60 @@ module.exports = {
         filename: "main.bundle.js"
     },
     module: {
+        // noParse: ["bootstrap", /jquery/],
         loaders: [
+        ],
+        rules: [
             {
-                test: /\.js|\.jsx$/,
-                loader: 'babel',
-                exclude: /node_modules/,
+                test: /\.scss$/,
+                use : [
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader"
+                    },
+                    {
+                        loader: "sass-loader"
+                    }
+
+                ]
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
                 query: {
                     presets: ['es2015', "react"]
                 }
-
+            },
+            {
+                test: /\.jsx$/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015', "react"]
+                }
+            },
+            {
+                test: /bootstrap/,
+                loader: "imports-loader?jQuery=jquery,$=jquery,window.Tether=tether,this=>window"
             }
         ]
     },
     resolve: {
-        extensions: ["", ".js", ".jsx"],
+        extensions: [".js", ".jsx", "css", "sass"],
         // where to look from
-        root: path.join(__dirname, "javascript", "react"),
-        modulesDirectories: ["web_modules", "node_modules", "src"]
+        alias : {
+            "bootstrap$": "bootstrap/dist/js/bootstrap.min",
+            "jquery": "jquery/dist/jquery.min",
+            "tether": "tether/dist/js/tether.min"
+        }
     },
     devtool: "eval-source-map",
     plugins: (
         function() {
-            var plugins = [];
+            var plugins = [
+
+            ];
 
             if (argv.optimize) {
                 plugins.push(new webpack.optimize.UglifyJsPlugin({
@@ -45,5 +79,5 @@ module.exports = {
             }
             return plugins;
         }
-    )
+    )()
 };

@@ -26,7 +26,7 @@ const getVisibleTodos = (todos, filter)=>{
 const VisibleTodoList = connect(
     (state)=>{
         return {
-            todos: getVisibleTodos(state.todos, state.visibilityFilter)
+            todos: getVisibleTodos(state.todo.todos, state.todo.visibilityFilter)
         }
     },
     (dispatch)=>{
