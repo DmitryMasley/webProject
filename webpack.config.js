@@ -9,10 +9,13 @@ const argv = require("yargs").argv;
 process.traceDeprecation = true;
 
 module.exports = {
-    entry: "./public/src/js/main",
+    entry: {
+        main: "./public/src/js/main",
+        artShop: "./public/src/js/artShop/main"
+    },
     output: {
         path: __dirname + "/public/build/js",
-        filename: "main.bundle.js"
+        filename: "[name].bundle.js"
     },
     module: {
         // noParse: ["bootstrap", /jquery/],

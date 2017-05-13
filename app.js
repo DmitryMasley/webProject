@@ -2,15 +2,16 @@
 /**
  * Created by dmasley on 6/1/16.
  */
-var express = require('express');
-var net = require("net");
-var app = express();
-var expressWs = require('express-ws')(app);
-let passport = require("passport");
+const express = require('express');
+const net = require("net");
+const app = express();
+const expressWs = require('express-ws')(app);
+const passport = require("passport");
 
 // routers
-var mainRouter = require("./routes/main");
-var wsRouter = require("./routes/wsRouter");
+const mainRouter = require("./routes/main");
+const wsRouter = require("./routes/wsRouter");
+const ArtShopRouter = require("./routes/artShop");
 
 app.use(express.static('public'));
 app.set("view engine", "ejs");
@@ -21,8 +22,9 @@ app.set("view engine", "ejs");
 
 app.use("/", mainRouter);
 app.use("", wsRouter);
+app.use("", ArtShopRouter);
 
-var server = net.createServer();
+const server = net.createServer();
 server.listen(6967);
 server.on("connection", (socket)=>{
     console.log('CONNECTED: ' + sock.remoteAddress +':'+ sock.remotePort);
