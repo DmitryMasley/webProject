@@ -1,3 +1,5 @@
+require("../../sass/artShop.scss");
+
 import ReactDOM from "react-dom";
 import React from "react";
 import {createStore, combineReducers} from "redux";
