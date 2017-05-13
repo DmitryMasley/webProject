@@ -14,7 +14,7 @@ class Counter extends React.Component {
 }
 
 const CounterWrapper = connect(
-    (state)=>{
+    (state, query)=>{
         return {
             value: state.counter
         }

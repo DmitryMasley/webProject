@@ -24,7 +24,7 @@ const getVisibleTodos = (todos, filter)=>{
 };
 
 const VisibleTodoList = connect(
-    (state)=>{
+    (state, query)=>{
         return {
             todos: getVisibleTodos(state.todo.todos, state.todo.visibilityFilter)
         }

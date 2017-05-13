@@ -5,7 +5,6 @@
 require("../sass/main.scss");
 
 import ReactDOM from "react-dom";
-import todoStore from "./stores/todoStore";
 import TodoReducer from "./reducers/todoReducer";
 import CounterReducer from "./reducers/countReducer";
 import TodoApp from "./components/todoApp";
@@ -31,7 +30,10 @@ ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
             <div>
-                <Route path="/todo" component={TodoApp}/>
+                <Route exact={true} path="/todo" component={TodoApp}/>
+
+                <Route path="/todo/:id" component={Counter}/>
+
                 <Route path="/counter" component={Counter}/>
             </div>
         </Router>
