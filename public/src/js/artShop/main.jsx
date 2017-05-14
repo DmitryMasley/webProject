@@ -1,4 +1,5 @@
 require("../../sass/artShop.scss");
+import bootsrap from "bootstrap-sass/assets/javascripts/bootstrap";
 
 import ReactDOM from "react-dom";
 import React from "react";
