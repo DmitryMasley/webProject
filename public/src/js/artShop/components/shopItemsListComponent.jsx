@@ -1,8 +1,12 @@
 import React from "react";
 
 class ShopItemsListComponent extends React.Component {
-    render(){
-        return <div></div>
+    render() {
+        return (
+            <div className="panel-body">
+
+            </div>
+        );
     }
-};
+}
 export default ShopItemsListComponent;

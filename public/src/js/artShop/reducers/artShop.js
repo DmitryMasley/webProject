@@ -1,4 +1,4 @@
-import {combineReducers} from "redux";
+import { combineReducers } from "redux";
 
 const defaultItems = [
     {
@@ -11,11 +11,7 @@ const defaultItems = [
     }
 ];
 const store = combineReducers({
-    filters: (state={})=>{
-        return state;
-    },
-    itemsList: (state=defaultItems)=>{
-        return state;
-    }
+    filters: (state = {}) => state,
+    itemsList: (state = defaultItems) => state
 });
 export default store;

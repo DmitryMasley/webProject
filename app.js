@@ -22,7 +22,7 @@ app.set("view engine", "ejs");
 
 app.use("/", mainRouter);
 app.use("", wsRouter);
-app.use("", ArtShopRouter);
+app.use("/shop", ArtShopRouter);
 
 const server = net.createServer();
 server.listen(6967);

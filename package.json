@@ -26,6 +26,7 @@
     "passport": "^0.3.2",
     "passport-local-mongoose": "^4.0.0",
     "react": "^15.1.0",
+    "react-css-modules": "^4.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
     "react-router": "^4.1.1",
@@ -48,19 +49,11 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "flow-bin": "^0.45.0",
     "flow-status-webpack-plugin": "^0.1.7",
-    "gulp-sass": "^3.1.0",
     "html-webpack-plugin": "^2.26.0",
     "ignore-styles": "^5.0.1",
-    "imports-loader": "^0.7.0",
-    "jquery": "^3.1.1",
-    "mongodb": "^2.2.22",
-    "node-sass": "^4.5.0",
     "postcss-cssnext": "^2.9.0",
     "postcss-import": "^9.1.0",
     "postcss-loader": "^1.2.2",
-    "postcss-mixins": "^5.4.1",
-    "sass-loader": "^5.0.0",
-    "style-loader": "^0.13.1",
-    "tether": "^1.4.0"
+    "postcss-mixins": "^5.4.1"
   }
 }
