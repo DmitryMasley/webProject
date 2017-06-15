@@ -20,16 +20,61 @@ module.exports = {
         ],
         rules: [
             {
-                test: /\.scss$/,
-                use : [
+                test: /\.css$/,
+                use: [
                     {
                         loader: "style-loader"
                     },
                     {
-                        loader: "css-loader"
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: true,
+                            modules: true,
+                            importLoaders: 1,
+                            localIdentName: "[path]___[name]__[local]___[hash:base64:5]"
+                        }
+                    }
+
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: true,
+                            modules: true,
+                            importLoaders: 1,
+                            localIdentName: "[path]___[name]__[local]___[hash:base64:5]"
+                        }
                     },
                     {
                         loader: "sass-loader"
+                    }
+
+                ]
+            },
+            {
+                test: /\.pcss$/,
+                use: [
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: true,
+                            modules: true,
+                            importLoaders: 1,
+                            localIdentName: "[path]___[name]__[local]___[hash:base64:5]"
+                        }
+                    },
+                    {
+                        loader: "postcss-loader"
                     }
 
                 ]

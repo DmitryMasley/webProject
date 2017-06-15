@@ -1,6 +1,5 @@
-import React from "react";
 import { connect } from "react-redux";
-import ShopItemsListComponent from "./shopItemsListComponent.jsx";
+import ShopItemsListComponent from "../components/shopItemsListComponent";
 
 const ShopItemsList = connect(
     state => ({
