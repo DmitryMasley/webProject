@@ -1,5 +1,5 @@
 import React from "react";
-import ShopItemsList from "./shopItemsList";
+import ShopItemsList from "../containers/shopItemsList";
 import ShopHeader from "./shopHeader";
 
 class ArtShopComponent extends React.Component {
