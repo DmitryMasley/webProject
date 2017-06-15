@@ -28,6 +28,7 @@ module.exports = {
         "react/jsx-boolean-value": "off",
         "react/no-unused-prop-types": "off",
         "jsx-a11y/no-static-element-interactions": "off",
+        "jsx-a11y/img-has-alt": "off",
         "class-methods-use-this": "off",
         "flowtype/define-flow-type": 1
     },
