@@ -16,6 +16,7 @@ module.exports = {
         "comma-dangle": ["error", "never"],
         "space-before-function-paren": ["off", "never"],
         "import/prefer-default-export": "off",
+        "import/extensions": "off",
         "no-param-reassign": "off",
         "react/no-unescaped-entities": "off",
         "react/jsx-indent": ["error", 4],

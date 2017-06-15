@@ -3,9 +3,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const argv = require("yargs").argv;
-/**
- * Created by dmasley on 6/1/16.
- */
+
 process.traceDeprecation = true;
 
 module.exports = {
@@ -18,7 +16,6 @@ module.exports = {
         filename: "[name].bundle.js"
     },
     module: {
-        // noParse: ["bootstrap", /jquery/],
         loaders: [
         ],
         rules: [
@@ -59,6 +56,7 @@ module.exports = {
     },
     resolve: {
         extensions: [".js", ".jsx", "css", "sass"],
+        modules: ["node_modules"],
         // where to look from
         alias : {
             "bootstrap$": "bootstrap/dist/js/bootstrap.min",
