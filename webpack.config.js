@@ -1,6 +1,4 @@
-"use strict";
 /* global require*/
-const path = require("path");
 const webpack = require("webpack");
 const argv = require("yargs").argv;
 
@@ -12,7 +10,7 @@ module.exports = {
         artShop: "./public/src/js/artShop/main"
     },
     output: {
-        path: __dirname + "/public/build/js",
+        path: `${__dirname}/public/build/js`,
         filename: "[name].bundle.js"
     },
     module: {
@@ -81,16 +79,16 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
+                loader: "babel-loader",
                 query: {
-                    presets: ['es2015', "react"]
+                    presets: ["es2015", "react"]
                 }
             },
             {
                 test: /\.jsx$/,
-                loader: 'babel-loader',
+                loader: "babel-loader",
                 query: {
-                    presets: ['es2015', "react"]
+                    presets: ["es2015", "react"]
                 }
             },
             {
@@ -103,16 +101,16 @@ module.exports = {
         extensions: [".js", ".jsx", "css", "sass"],
         modules: ["node_modules"],
         // where to look from
-        alias : {
-            "bootstrap$": "bootstrap/dist/js/bootstrap.min",
-            "jquery": "jquery/dist/jquery.min",
-            "tether": "tether/dist/js/tether.min"
+        alias: {
+            bootstrap$: "bootstrap/dist/js/bootstrap.min",
+            jquery: "jquery/dist/jquery.min",
+            tether: "tether/dist/js/tether.min"
         }
     },
     devtool: "eval-source-map",
     plugins: (
         function() {
-            let plugins = [
+            const plugins = [
 
             ];
 
@@ -124,6 +122,5 @@ module.exports = {
                 }));
             }
             return plugins;
-        }
-    )()
+        }())
 };
